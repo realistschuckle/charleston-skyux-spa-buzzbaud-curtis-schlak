@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Is deadly?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bee of bees"
+        [ngClass]="{ 'skyux-is-awesome': bee === selectedBee }"
+        [class.skyux-is-awesome]="bee === selectedBee">
+      <td>
+        <a (click)="selectBee(bee)">
+          {{ bee.name }}
+        </a>
+      </td>
+      <td>{{ bee.species }}</td>
+      <td>{{ bee.deadly ? 'Yes' : 'No' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="selectedBee">
+  <app-bee-detail (wantsEdit)="changeToEditForm()" *ngIf="!isEditing" [bee]="selectedBee"></app-bee-detail>
+  <app-bee-editor (wantsToSave)="handleEdit($event)" *ngIf="isEditing" [bee]="selectedBee"></app-bee-editor>
+</div>

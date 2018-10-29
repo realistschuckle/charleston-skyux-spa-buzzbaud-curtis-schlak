@@ -1,0 +1,15 @@
+<form (submit)="updateBee()">
+  <label>
+    Name
+    <input type="text" name="name" [(ngModel)]="bee.name">
+  </label>
+  <label>
+    Species
+    <input type="text" name="species" [(ngModel)]="bee.species">
+  </label>
+  <label>
+    Description
+    <textarea name="description" [(ngModel)]="bee.description"></textarea>
+  </label>
+  <button>Save</button>
+</form>

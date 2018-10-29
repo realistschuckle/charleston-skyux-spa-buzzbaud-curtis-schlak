@@ -1,0 +1,18 @@
+<div class="bee-detail">
+  <div class="bee-detail-image">
+    <img [src]="bee.image_url" class="bee-detail-image">
+  </div>
+  <header class="bee-detail-header">
+    <h1>{{ bee.name }} ({{ bee.genus }})</h1>
+    <h2>{{ bee.alias }}</h2>
+    <div>
+      <span *ngIf="bee.deadly" style="color: white; font-weight: bold; background-color: red; display: inline-block; padding: .25em">Deadly</span>
+      <span *ngIf="bee.communal" style="color: white; font-weight: bold; background-color: steelblue; display: inline-block; padding: .25em">Communal</span>
+      <span *ngIf="bee.endangered" style="color: white; font-weight: bold; background-color: darkgreen; display: inline-block; padding: .25em">Endangered</span>
+    </div>
+    <button (click)="signalEdit()">Edit</button>
+  </header>
+  <div class="bee-detail-description">
+    <p>{{ bee.description }}</p>
+  </div>
+</div>
