@@ -1,5 +1,5 @@
 import {
-  Component, OnInit, Input, EventEmitter, Output
+  Component, Input
 } from '@angular/core';
 import { Bee } from '../models/bee';
 
@@ -8,21 +8,7 @@ import { Bee } from '../models/bee';
   templateUrl: './bee-detail.component.html',
   styleUrls: ['./bee-detail.component.scss']
 })
-export class BeeDetailComponent implements OnInit {
-  @Output()
-  public wantsEdit: EventEmitter<boolean>;
-
+export class BeeDetailComponent {
   @Input()
   public bee: Bee;
-
-  constructor() {
-    this.wantsEdit = new EventEmitter<boolean>();
-  }
-
-  public ngOnInit(): void {
-  }
-
-  public signalEdit(): void {
-    this.wantsEdit.next(true);
-  }
 }

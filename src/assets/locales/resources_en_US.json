@@ -1,18 +1,14 @@
 {
-  "example_string": {
-    "message": "This is an example string",
-    "_description": "The _description property gives context to the translator as to how the string is used in the product"
+  "bee_table_name_header": {
+    "message": "Name",
+    "_description": "The name header"
   },
-  "app_nav_about": {
-    "message": "About",
-    "_description": "The text for the About top-level navigation item"
+  "bee_table_species_header": {
+    "message": "Species",
+    "_description": "The species header"
   },
-  "app_nav_home": {
-    "message": "Home",
-    "_description": "The text for the Home top-level navigation item"
-  },
-  "home_title": {
-    "message": "SKY UX Template",
-    "_description": "Title for the home component"
+  "bee_table_is_deadly_header": {
+    "message": "Is deadly?",
+    "_description": "The is deadly header"
   }
 }

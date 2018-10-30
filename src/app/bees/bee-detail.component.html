@@ -10,7 +10,7 @@
       <span *ngIf="bee.communal" style="color: white; font-weight: bold; background-color: steelblue; display: inline-block; padding: .25em">Communal</span>
       <span *ngIf="bee.endangered" style="color: white; font-weight: bold; background-color: darkgreen; display: inline-block; padding: .25em">Endangered</span>
     </div>
-    <button (click)="signalEdit()">Edit</button>
+    <a [skyAppLink]="['/bees', bee.id, 'edit']">Edit</a>
   </header>
   <div class="bee-detail-description">
     <p>{{ bee.description }}</p>

@@ -5,5 +5,28 @@
   "auth": true,
   "app": {
     "port": 8001
+  },
+  "omnibar": {
+    "experimental": true,
+    "nav": {
+      "services": [
+        {
+          "title": "Buzzbaud",
+          "items": [
+            {
+              "title": "Home",
+              "route": "/"
+            },
+            {
+              "title": "Bees",
+              "route": "/bees"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "appSettings": {
+    "buzzbaudSvcUrl": "https://buzzbaud.curtissimo.com/v1"
   }
 }

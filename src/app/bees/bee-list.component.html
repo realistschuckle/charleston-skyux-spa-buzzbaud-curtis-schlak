@@ -1,9 +1,9 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Species</th>
-      <th>Is deadly?</th>
+      <th>{{ 'bee_table_name_header' | skyAppResources }}</th>
+      <th>{{ 'bee_table_species_header' | skyAppResources }}</th>
+      <th>{{ 'bee_table_is_deadly_header' | skyAppResources }}</th>
     </tr>
   </thead>
   <tbody>
@@ -11,7 +11,7 @@
         [ngClass]="{ 'skyux-is-awesome': bee === selectedBee }"
         [class.skyux-is-awesome]="bee === selectedBee">
       <td>
-        <a (click)="selectBee(bee)">
+        <a [skyAppLink]="['/bees', bee.id]">
           {{ bee.name }}
         </a>
       </td>
@@ -21,7 +21,9 @@
   </tbody>
 </table>
 
+<button (click)="ngOnInit()">Reload bees</button>
+
 <div *ngIf="selectedBee">
-  <app-bee-detail (wantsEdit)="changeToEditForm()" *ngIf="!isEditing" [bee]="selectedBee"></app-bee-detail>
+  <app-bee-detail *ngIf="!isEditing" [bee]="selectedBee"></app-bee-detail>
   <app-bee-editor (wantsToSave)="handleEdit($event)" *ngIf="isEditing" [bee]="selectedBee"></app-bee-editor>
 </div>
